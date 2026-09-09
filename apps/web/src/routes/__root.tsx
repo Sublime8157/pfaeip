@@ -6,8 +6,10 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { getCurrentUser } from "../features/auth/session";
 
 export const Route = createRootRoute({
+  beforeLoad: async () => ({ user: await getCurrentUser() }),
   head: () => ({
     meta: [
       {

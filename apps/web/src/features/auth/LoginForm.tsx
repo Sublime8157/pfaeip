@@ -26,7 +26,7 @@ export function LoginForm() {
     if (res.error) return setError(res.error);
 
     await router.invalidate();
-    router.navigate({ to: "/" });
+    router.navigate({ to: "/dashboard" });
   }
   return (
     <form onSubmit={onSubmit}>
